@@ -27,3 +27,21 @@ end
 def increase_pets_sold(hash, number)
   hash[:admin][:pets_sold] += number
 end
+
+#takes in the pet shop hash and returns the stock count. stock count is the number of pets in the array under the key [:pets]
+
+def stock_count(hash)
+return hash[:pets].length
+end
+
+# takes in the pet shop hash and a string of a pet breed. needs to count the number of pets of that string by putting each pet of that breed in an array. for loop over pets and do a .include? for each pet and push onto array and return that array.
+
+def pets_by_breed(hash,pet_breed)
+  breeds = []
+  for pet in hash[:pets]
+    if pet[:breed].include?(pet_breed)
+      breeds.push(pet[:breed])
+    end
+  end
+  return breeds
+end
