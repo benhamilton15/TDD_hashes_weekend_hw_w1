@@ -119,12 +119,13 @@ end
 
 #second test checks if a pet is not found. Added a if statement for the function to not change values if the search for a pet name returns nil.
 
+# third test checks if the funds are sufficient. added an AND statement to the if statement so the customer needs to have sufficient funds and the pet needs to exist.
+
 def sell_pet_to_customer(pet_store, bought_pet, customer)
-  if bought_pet != nil
+  if bought_pet != nil && (customer[:cash] >= bought_pet[:price])
     add_pet_to_customer(customer, bought_pet)
     increase_pets_sold(pet_store, 1)
     remove_customer_cash(customer, bought_pet[:price])
     add_or_remove_cash(pet_store, bought_pet[:price])
   end
-
 end
