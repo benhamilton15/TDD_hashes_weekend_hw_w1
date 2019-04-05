@@ -82,3 +82,9 @@ end
 def customer_cash(customer)
 return customer[:cash]
 end
+
+#this function takes in a customer and a number and takes the number away from the current customers total cash. doesnt need to return anything. is tested by another function.
+
+def remove_customer_cash(customer, remove_cash)
+customer[:cash] -= remove_cash
+end
