@@ -48,7 +48,7 @@ end
 
 #takes in the pet shop hash and a string of a pets name. needs to return a hash with the pets details.
 
-#second test require nil to be returned if no pet is found with that name.
+#second test requires nil to be returned if no pet is found with that name.
 
 def find_pet_by_name(hash, pet_name)
   for pet in hash[:pets]
@@ -57,4 +57,14 @@ def find_pet_by_name(hash, pet_name)
     end
   end
   return nil
+end
+
+# This function takes in the pet shop hash and a string of a pet name. needs to remove the hash of a pet under that name. doesnt need to return anything as it is tested by a previous function.
+
+def remove_pet_by_name(hash, pet_name)
+  for pet in hash[:pets]
+    if pet[:name] == pet_name
+      hash[:pets].delete(pet)
+    end
+  end
 end
