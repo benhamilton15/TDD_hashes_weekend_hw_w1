@@ -45,3 +45,16 @@ def pets_by_breed(hash,pet_breed)
   end
   return breeds
 end
+
+#takes in the pet shop hash and a string of a pets name. needs to return a hash with the pets details.
+
+#second test require nil to be returned if no pet is found with that name.
+
+def find_pet_by_name(hash, pet_name)
+  for pet in hash[:pets]
+    if pet[:name] == pet_name
+      return pet
+    end
+  end
+  return nil
+end
