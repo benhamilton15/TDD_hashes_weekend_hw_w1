@@ -50,6 +50,8 @@ end
 
 #second test requires nil to be returned if no pet is found with that name.
 
+## could be improved in case of multiple pets witht he same name
+
 def find_pet_by_name(hash, pet_name)
   for pet in hash[:pets]
     if pet[:name] == pet_name
@@ -87,4 +89,16 @@ end
 
 def remove_customer_cash(customer, remove_cash)
 customer[:cash] -= remove_cash
+end
+
+#this function takes in a customer and returns a count of the number of pets they have in their array. can .count .length or .size the array. dont know what benefits each has.
+
+def customer_pet_count(customer)
+  return customer[:pets].count
+end
+
+#takes in a customer and a hash new pet. doesnt need to return anything. pushed the pet into the customers pets array.
+
+def add_pet_to_customer(customer, new_pet)
+  customer[:pets].push(new_pet)
 end
