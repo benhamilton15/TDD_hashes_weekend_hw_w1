@@ -117,10 +117,14 @@ end
 
 ## improvements maybe change the 1 in increase_pets_sold function argument to a variable.
 
+#second test checks if a pet is not found. Added a if statement for the function to not change values if the search for a pet name returns nil.
+
 def sell_pet_to_customer(pet_store, bought_pet, customer)
-  add_pet_to_customer(customer, bought_pet)
-  increase_pets_sold(pet_store, 1)
-  remove_customer_cash(customer, bought_pet[:price])
-  add_or_remove_cash(pet_store, bought_pet[:price])
+  if bought_pet != nil
+    add_pet_to_customer(customer, bought_pet)
+    increase_pets_sold(pet_store, 1)
+    remove_customer_cash(customer, bought_pet[:price])
+    add_or_remove_cash(pet_store, bought_pet[:price])
+  end
 
 end
