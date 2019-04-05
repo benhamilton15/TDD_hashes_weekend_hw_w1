@@ -68,3 +68,17 @@ def remove_pet_by_name(hash, pet_name)
     end
   end
 end
+
+#instance variables @
+
+#this function takes in the pet shop hash and an instance variable of a new pet to add to the stock. This needs to be added to the array under the key [:pets]. doesnt need to return anything. is tested by a previous function stock_count.
+
+def add_pet_to_stock(hash, new_pet)
+  hash[:pets].push(new_pet)
+end
+
+#This function takes in an index position within an array and returns the customers cash under key [:cash]
+
+def customer_cash(customer)
+return customer[:cash]
+end
