@@ -1,4 +1,5 @@
 # takes in @pet_shop hash and returns a string "Camelot of Pets" which is under the key name in the hash
+
 def pet_shop_name(pet_shop)
   return pet_shop[:name]
 end
@@ -12,8 +13,8 @@ end
 
 #takes in @pet_shop and a number to change the total cash of the pet store inside the hash . Doesnt need to return anything
 
-def add_or_remove_cash(pet_shop, number)
-  pet_shop[:admin][:total_cash] += number
+def add_or_remove_cash(pet_shop, amount)
+  pet_shop[:admin][:total_cash] += amount
 end
 
 #takes in @pet_shop and returns number of pets sold. should be similar to total_cash but uses different key.
@@ -24,8 +25,8 @@ end
 
 #this function need to take in the pet shop hash and a number to increase the value of pets_sold. nothing needs returned. will be tested by previous function
 
-def increase_pets_sold(pet_shop, number)
-  pet_shop[:admin][:pets_sold] += number
+def increase_pets_sold(pet_shop, number_of_pets_sold)
+  pet_shop[:admin][:pets_sold] += number_of_pets_sold
 end
 
 #takes in the pet shop hash and returns the stock count. stock count is the number of pets in the array under the key [:pets]
@@ -71,7 +72,7 @@ def remove_pet_by_name(pet_shop, pet_name)
   end
 end
 
-#instance variables @
+#instance variables @ allow the variable to be read outside the file.?
 
 #this function takes in the pet shop hash and an instance variable of a new pet to add to the stock. This needs to be added to the array under the key [:pets]. doesnt need to return anything. is tested by a previous function stock_count.
 
@@ -87,8 +88,8 @@ end
 
 #this function takes in a customer and a number and takes the number away from the current customers total cash. doesnt need to return anything. is tested by another function.
 
-def remove_customer_cash(customer, remove_cash)
-customer[:cash] -= remove_cash
+def remove_customer_cash(customer, amount_to_be_removed)
+customer[:cash] -= amount_to_be_removed
 end
 
 #this function takes in a customer and returns a count of the number of pets they have in their array. can .count .length or .size the array. dont know what benefits each has.
@@ -115,8 +116,6 @@ end
 
 #takes in the pet pet shop hash, a pet and a customer. This function add this pet to the customers pets, increase the amount of pets sold, remove cash from customer and increase total cash of pet store.
 
-## improvements maybe change the 1 in increase_pets_sold function argument to a variable.
-
 #second test checks if a pet is not found. Added a if statement for the function to not change values if the search for a pet name returns nil.
 
 # third test checks if the funds are sufficient. added an AND statement to the if statement so the customer needs to have sufficient funds and the pet needs to exist.
@@ -129,3 +128,5 @@ def sell_pet_to_customer(pet_store, bought_pet, customer)
     add_or_remove_cash(pet_store, bought_pet[:price])
   end
 end
+
+## improvements maybe change the 1 in increase_pets_sold function argument to a variable.
