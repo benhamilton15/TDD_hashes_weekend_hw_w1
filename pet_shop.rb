@@ -15,3 +15,15 @@ end
 def add_or_remove_cash(hash, number)
   hash[:admin][:total_cash] += number
 end
+
+#takes in @pet_shop and returns number of pets sold. should be similar to total_cash but uses different key.
+
+def pets_sold(hash)
+  return hash[:admin][:pets_sold]
+end
+
+#this function need to take in the pet shop hash and a number to increase the value of pets_sold. nothing needs returned. will be tested by previous function
+
+def increase_pets_sold(hash, number)
+  hash[:admin][:pets_sold] += number
+end
