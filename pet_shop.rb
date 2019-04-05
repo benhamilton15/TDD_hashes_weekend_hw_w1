@@ -10,8 +10,8 @@ def total_cash(hash)
   return hash[:admin][:total_cash]
 end
 
-#
+#takes in @pet_shop and a number to change the total cash of the pet store inside the hash . Doesnt need to return anything
 
-# def 
-
-# end
+def add_or_remove_cash(hash, number)
+  hash[:admin][:total_cash] += number
+end
