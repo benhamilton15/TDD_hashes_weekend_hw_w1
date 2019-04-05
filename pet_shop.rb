@@ -102,3 +102,25 @@ end
 def add_pet_to_customer(customer, new_pet)
   customer[:pets].push(new_pet)
 end
+
+#this function tests if the customer has enough funds to buy a pet. takes in a customer and the new pet hash. needs to return true or false.
+
+def customer_can_afford_pet?(customer, new_pet)
+  if customer[:cash] >= new_pet[:price]
+    return true
+  else
+    return false
+  end
+end
+
+#takes in the pet pet shop hash, a pet and a customer. This function add this pet to the customers pets, increase the amount of pets sold, remove cash from customer and increase total cash of pet store.
+
+## improvements maybe change the 1 in increase_pets_sold function argument to a variable.
+
+def sell_pet_to_customer(pet_store, bought_pet, customer)
+  add_pet_to_customer(customer, bought_pet)
+  increase_pets_sold(pet_store, 1)
+  remove_customer_cash(customer, bought_pet[:price])
+  add_or_remove_cash(pet_store, bought_pet[:price])
+
+end
